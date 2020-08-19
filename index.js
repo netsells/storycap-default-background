@@ -11,6 +11,15 @@ function inIframe() {
     }
 }
 
+/**
+ * The decorator function.
+ *
+ * @param {Function} story
+ * @param {object} context
+ * @param {object} context.parameters
+ *
+ * @returns {{template: string, created: Function}}
+ */
 const defaultBackgroundDecorator = (story, { parameters }) => {
     const hasBackground = parameters.backgrounds && parameters.backgrounds.length;
 
