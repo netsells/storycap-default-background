@@ -41,7 +41,7 @@ export const myComponent = () => ({
 
 // Enable for single story
 myComponent.decorators = [
-    VerticallyCenteredDecorator,
+    withDefaultBackground,
 ];
 ```
 
