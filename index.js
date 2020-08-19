@@ -20,7 +20,7 @@ function inIframe() {
  *
  * @returns {{template: string, created: Function}}
  */
-const defaultBackgroundDecorator = (story, { parameters }) => {
+const withDefaultBackground = (story, { parameters }) => {
     const hasBackground = parameters.backgrounds && parameters.backgrounds.length;
 
     return {
@@ -38,4 +38,4 @@ const defaultBackgroundDecorator = (story, { parameters }) => {
     };
 };
 
-export default defaultBackgroundDecorator;
+export default withDefaultBackground;
