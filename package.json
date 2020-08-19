@@ -1,0 +1,15 @@
+{
+    "name": "@netsells/storycap-default-background",
+    "version": "0.1.0",
+    "main": "index.js",
+    "license": "MIT",
+    "publishConfig": {
+        "registry": "https://registry.npmjs.org/"
+    },
+    "files": [
+        "index.js"
+    ],
+    "devDependencies": {
+        "@netsells/eslint-config": "^4.0.0"
+    }
+}
