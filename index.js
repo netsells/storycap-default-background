@@ -38,4 +38,4 @@ const withDefaultBackground = (story, { parameters }) => {
     };
 };
 
-export default withDefaultBackground;
+module.exports = withDefaultBackground;
