@@ -21,18 +21,26 @@ function inIframe() {
  * @returns {{template: string, created: Function}}
  */
 const withDefaultBackground = (story, { parameters }) => {
-    const hasBackground = parameters.backgrounds && parameters.backgrounds.length;
+    const { backgrounds, default: defaultBg } = parameters;
+
+    const backgroundOptions = Array.isArray(backgrounds.values)
+        ? backgrounds.values
+        : backgrounds;
+
+    if (!backgroundOptions.length) {
+        return story();
+    }
+
+    const defaultBackground = backgroundOptions.find((bg) => bg.default || (defaultBg && bg.name === defaultBg))
+        || backgroundOptions[0];
 
     return {
         template: '<story />',
 
         created() {
             // If testing in the popout view we'll use the default background instead of white
-            if (hasBackground && !inIframe()) {
-                document.body.style.backgroundColor = (
-                    parameters.backgrounds.find((bg) => bg.default)
-                    || parameters.backgrounds[0]
-                ).value;
+            if (defaultBackground && !inIframe()) {
+                document.body.style.backgroundColor = defaultBackground.value;
             }
         },
     };
