@@ -21,7 +21,8 @@ function inIframe() {
  * @returns {{template: string, created: Function}}
  */
 const withDefaultBackground = (story, { parameters }) => {
-    const { backgrounds, default: defaultBg } = parameters;
+    const { backgrounds } = parameters;
+    const { default: defaultBg } = backgrounds;
 
     const backgroundOptions = Array.isArray(backgrounds.values)
         ? backgrounds.values
